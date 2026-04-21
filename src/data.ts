@@ -44,13 +44,13 @@ export interface TypeStyle {
 
 export const DB: DemeEntry[] = [
   // ===== 特典揃い目 =====
-  { code:"000", type:"special", label:"Z-ZONE突入", desc:"0揃い。Z-ZONE（上乗せ連鎖状態）突入確定。", cond:null },
-  { code:"111", type:"special", label:"GG確定", desc:"奇数揃い。GG当選確定。", cond:null },
-  { code:"333", type:"special", label:"GG確定", desc:"奇数揃い。GG当選確定。", cond:null },
-  { code:"555", type:"special", label:"GG確定", desc:"奇数揃い。GG当選確定。", cond:null },
-  { code:"777", type:"special", label:"GG4セット以上確定", desc:"7揃い。基本はGOD揃い時に出現。",
-    cond:[{w:"GOD揃い時",r:"GG4セット以上確定",i:"🔥"},{w:"G-ZONE中",r:"残りストック4個以上示唆",i:"✅"}] },
-  { code:"VVV", type:"special", label:"GG3セット以上確定", desc:"V揃い。GG3セット以上のストック確定。", cond:null },
+  { code:"000", type:"special", label:"Z-ZONE突入", desc:"0揃い。Z-ZONE（上乗せ連鎖状態）突入濃厚。", cond:null },
+  { code:"111", type:"special", label:"GG濃厚", desc:"奇数揃い。GG当選濃厚。", cond:null },
+  { code:"333", type:"special", label:"GG濃厚", desc:"奇数揃い。GG当選濃厚。", cond:null },
+  { code:"555", type:"special", label:"GG濃厚", desc:"奇数揃い。GG当選濃厚。", cond:null },
+  { code:"777", type:"special", label:"GG4セット以上濃厚", desc:"7揃い。基本はGOD揃い時に出現。",
+    cond:[{w:"GOD揃い時",r:"GG4セット以上濃厚",i:"🔥"},{w:"G-ZONE中",r:"残りストック4個以上示唆",i:"✅"}] },
+  { code:"VVV", type:"special", label:"GG3セット以上濃厚", desc:"V揃い。GG3セット以上のストック濃厚。", cond:null },
   { code:"SSS", type:"special", label:"SGG突入", desc:"S揃い。SGG（スーパーゴッドゲーム）突入。ゲーム数変動型AT（75%ループ以上）。", cond:null },
 
   // ===== リーチ目 =====
@@ -73,7 +73,7 @@ export const DB: DemeEntry[] = [
   { code:"168", type:"reach", label:"いろは", desc:"GG当選濃厚。", cond:null },
   { code:"175", type:"reach", label:"イナゴ", desc:"GG当選濃厚。", cond:null },
   { code:"184", type:"reach", label:"いわし", desc:"GG当選濃厚。", cond:null },
-  { code:"1V3", type:"reach", label:"イビサ島", desc:"GG当選濃厚。🆕 神々の軌跡で新規追加されたリーチ目。", cond:null },
+  { code:"1V3", type:"reach", label:"イビサ島", desc:"GG当選濃厚。神々の軌跡で新規追加されたリーチ目。", cond:null },
   { code:"201", type:"reach", label:"におい", desc:"GG当選濃厚。スルーしがち。ヤメ時に要チェック。", cond:null },
   { code:"223", type:"reach", label:"富士山", desc:"GG当選濃厚。", cond:null },
   { code:"280", type:"reach", label:"ニーハオ", desc:"GG当選濃厚。", cond:null },
@@ -96,7 +96,7 @@ export const DB: DemeEntry[] = [
   { code:"526", type:"reach", label:"小次郎", desc:"GG当選濃厚。", cond:null },
   { code:"543", type:"reach", label:"暦", desc:"GG当選濃厚。", cond:null },
   { code:"564", type:"reach", label:"殺し", desc:"GG当選濃厚。",
-    cond:[{w:"注意",r:"凱旋では未確定扱いの報告あり。出現したら念のため続行推奨",i:"⚠️"}] },
+    cond:[{w:"注意",r:"凱旋では濃厚扱いされない報告あり。出現したら念のため続行推奨",i:"⚠️"}] },
   { code:"56V", type:"reach", label:"転ぶ", desc:"GG当選濃厚。", cond:null },
   { code:"5V0", type:"reach", label:"ご無礼", desc:"GG当選濃厚。", cond:null },
   { code:"5V4", type:"reach", label:"拳", desc:"GG当選濃厚。", cond:null },
@@ -122,7 +122,7 @@ export const DB: DemeEntry[] = [
 
   // ===== チャンス目 =====
   { code:"38V", type:"chance", label:"雅（みやび）", desc:"チャンス目。歴代お馴染み。GG前兆中・当選Gで出現しやすい。", cond:null },
-  { code:"461", type:"chance", label:"鎧（よろい）", desc:"チャンス目。🆕 神々の軌跡で新規追加。GG前兆示唆。", cond:null },
+  { code:"461", type:"chance", label:"鎧（よろい）", desc:"チャンス目。神々の軌跡で新規追加。GG前兆示唆。", cond:null },
   { code:"468", type:"chance", label:"ヨーロッパ", desc:"チャンス目。歴代お馴染み。GG前兆中・当選Gで出現しやすい。", cond:null },
   { code:"631", type:"chance", label:"無罪", desc:"チャンス目。GG前兆中・当選Gで出現しやすい。", cond:null },
   { code:"831", type:"chance", label:"野菜", desc:"チャンス目。GG前兆中・当選Gで出現しやすい。", cond:null },
@@ -131,7 +131,7 @@ export const DB: DemeEntry[] = [
   { code:"505", type:"chance", label:"奇数ハサミ+中0", desc:"チャンス目。GG前兆示唆。", cond:null },
   { code:"707", type:"chance", label:"奇数ハサミ+中0", desc:"チャンス目。GG前兆示唆。", cond:null },
   { code:"100", type:"chance", label:"左奇数+ケツ0テンパイ", desc:"チャンス目。GG前兆示唆。", cond:null },
-  { code:"200", type:"chance", label:"左偶数+ケツ0テンパイ", desc:"チャンス目。🆕 軌跡のメーカー資料で明記。GG前兆示唆。", cond:null },
+  { code:"200", type:"chance", label:"左偶数+ケツ0テンパイ", desc:"軌跡のメーカー資料で明記。通常モード以上・GG前兆の示唆。", cond:null },
   { code:"300", type:"chance", label:"左奇数+ケツ0テンパイ", desc:"チャンス目。GG前兆示唆。", cond:null },
   { code:"500", type:"chance", label:"左奇数+ケツ0テンパイ", desc:"チャンス目。GG前兆示唆。", cond:null },
 
@@ -169,33 +169,33 @@ export const DB: DemeEntry[] = [
   { code:"V77", type:"t_short", label:"天国ショート以上濃厚", desc:"V+7ケツテンパイ。", cond:null },
 
   // ===== Vモード =====
-  { code:"V0V", type:"v_mode", label:"Vモード確定", desc:"Vモード（天国準備2）確定。AT当選時3連以上確定。", cond:null },
+  { code:"V0V", type:"v_mode", label:"Vモード濃厚", desc:"Vモード（天国準備B）濃厚。AT当選時3連以上濃厚。", cond:null },
   { code:"V2V", type:"v_mode", label:"Vモード示唆/チャンス目", desc:"Vハサミ+中偶数。チャンス目兼用。",
-    cond:[{w:"単発",r:"チャンス目としてGG前兆示唆。V示唆は弱い",i:"△"},{w:"頻発（短期間に複数回）",r:"Vモード濃厚。AT当選で3連以上確定",i:"🔥"}] },
+    cond:[{w:"単発",r:"通常モード以上示唆。V示唆は弱い",i:"△"},{w:"頻発",r:"Vモード濃厚。AT当選で3連以上濃厚",i:"🔥"}] },
   { code:"V4V", type:"v_mode", label:"Vモード示唆/チャンス目", desc:"Vハサミ+中偶数。チャンス目兼用。",
-    cond:[{w:"単発",r:"チャンス目としてGG前兆示唆。V示唆は弱い",i:"△"},{w:"頻発",r:"Vモード濃厚",i:"🔥"}] },
+    cond:[{w:"単発",r:"通常モード以上示唆。V示唆は弱い",i:"△"},{w:"頻発",r:"Vモード濃厚。AT当選で3連以上濃厚",i:"🔥"}] },
   { code:"V6V", type:"v_mode", label:"Vモード示唆/チャンス目", desc:"Vハサミ+中偶数。",
-    cond:[{w:"単発",r:"チャンス目としてGG前兆示唆",i:"△"},{w:"頻発",r:"Vモード濃厚",i:"🔥"}] },
+    cond:[{w:"単発",r:"通常モード以上示唆。V示唆は弱い",i:"△"},{w:"頻発",r:"Vモード濃厚。AT当選で3連以上濃厚",i:"🔥"}] },
   { code:"V8V", type:"v_mode", label:"Vモード示唆", desc:"Vハサミ+中偶数。",
-    cond:[{w:"単発",r:"弱いVモード示唆",i:"△"},{w:"頻発",r:"Vモード濃厚",i:"🔥"}] },
+    cond:[{w:"単発",r:"通常モード以上示唆。V示唆は弱い",i:"△"},{w:"頻発",r:"Vモード濃厚。AT当選で3連以上濃厚",i:"🔥"}] },
 
   // ===== 天国準備以上 =====
   ...["131","151","171","313","353","373","515","535","575","717","737","757"].map<DemeEntry>(c=>({code:c,type:"prep",label:"天国準備以上濃厚",desc:"奇数ハサミ+中奇数。",cond:null})),
   ...["010","030","050","070"].map<DemeEntry>(c=>({code:c,type:"prep",label:"天国準備以上濃厚",desc:"0ハサミ+中奇数。凱旋から追加の0図柄パターン。",cond:null})),
   ...["177","377","577"].map<DemeEntry>(c=>({code:c,type:"prep",label:"天国準備以上濃厚",desc:"左奇数+7ケツテンパイ。",cond:null})),
-  { code:"345", type:"prep", label:"天国準備以上～天国S以上", desc:"奇数順目。成立役で変化。",
-    cond:[{w:"ハズレ成立",r:"天国ショート以上濃厚に格上げ",i:"🔥"},{w:"リプレイ等",r:"天国準備以上濃厚",i:"✅"}] },
-  { code:"567", type:"prep", label:"天国準備以上～天国S以上", desc:"奇数順目。成立役で変化。",
-    cond:[{w:"ハズレ成立",r:"天国ショート以上濃厚に格上げ",i:"🔥"},{w:"リプレイ等",r:"天国準備以上濃厚",i:"✅"}] },
-  { code:"234", type:"prep", label:"上位モード示唆～天国準備以上", desc:"偶数順目。成立役で変化。",
-    cond:[{w:"中段青7リプレイ成立",r:"天国準備以上濃厚に格上げ",i:"🔥"},{w:"その他",r:"弱い上位モード示唆",i:"△"}] },
-  { code:"456", type:"prep", label:"上位モード示唆～天国準備以上", desc:"偶数順目。成立役で変化。",
-    cond:[{w:"中段青7リプレイ成立",r:"天国準備以上濃厚に格上げ",i:"🔥"},{w:"その他",r:"弱い上位モード示唆",i:"△"}] },
-  { code:"678", type:"prep", label:"上位モード示唆～天国準備以上", desc:"偶数順目。成立役で変化。",
-    cond:[{w:"中段青7リプレイ成立",r:"天国準備以上濃厚に格上げ",i:"🔥"},{w:"その他",r:"弱い上位モード示唆",i:"△"}] },
-  ...["727","747","767","787"].map<DemeEntry>(c=>({code:c,type:"prep",label:"天国準備以上（遅れ時）",desc:"7ハサミ+中偶数。遅れが条件。",
+  { code:"345", type:"prep", label:"天国準備/天国モード示唆", desc:"奇数順目。成立役で変化。",
+    cond:[{w:"ハズレ成立",r:"天国モード（ショート以上）濃厚に格上げ",i:"🔥"},{w:"リプレイ等",r:"天国準備モード以上濃厚",i:"✅"}] },
+  { code:"567", type:"prep", label:"天国準備/天国モード示唆", desc:"奇数順目。成立役で変化。",
+    cond:[{w:"ハズレ成立",r:"天国モード（ショート以上）濃厚に格上げ",i:"🔥"},{w:"リプレイ等",r:"天国準備モード以上濃厚",i:"✅"}] },
+  { code:"234", type:"prep", label:"通常モード以上示唆", desc:"偶数順目。成立役で変化。",
+    cond:[{w:"中段青7成立",r:"天国準備モード以上濃厚に格上げ",i:"🔥"},{w:"その他",r:"通常モード以上の期待度UP",i:"△"}] },
+  { code:"456", type:"prep", label:"通常モード以上示唆", desc:"偶数順目。成立役で変化。",
+    cond:[{w:"中段青7成立",r:"天国準備モード以上濃厚に格上げ",i:"🔥"},{w:"その他",r:"通常モード以上の期待度UP",i:"△"}] },
+  { code:"678", type:"prep", label:"通常モード以上示唆", desc:"偶数順目。成立役で変化。",
+    cond:[{w:"中段青7成立",r:"天国準備モード以上濃厚に格上げ",i:"🔥"},{w:"その他",r:"通常モード以上の期待度UP",i:"△"}] },
+  ...["727","747","767","787"].map<DemeEntry>(c=>({code:c,type:"prep",label:"天国準備以上濃厚",desc:"7ハサミ+中偶数。遅れが条件。",
     cond:[{w:"遅れ演出あり",r:"天国準備以上濃厚",i:"🔥"},{w:"遅れなし",r:"特に意味なし",i:"—"}]})),
-  ...["701","703","705"].map<DemeEntry>(c=>({code:c,type:"prep",label:"天国準備以上（遅れ時）",desc:"70+奇数。遅れが条件。",
+  ...["701","703","705"].map<DemeEntry>(c=>({code:c,type:"prep",label:"天国準備以上濃厚",desc:"70+奇数。遅れが条件。",
     cond:[{w:"遅れ演出あり",r:"天国準備以上濃厚",i:"🔥"},{w:"遅れなし",r:"特に意味なし",i:"—"}]})),
 ];
 
@@ -217,13 +217,13 @@ export function patterns(code: string): PatternMatch[] {
       ds: "V図柄が短期間に集中すればVモード濃厚（V出現率:約1/4.66 ※前作参考）。単発は弱い。",
       cond: [
         { w: "単発", r: "弱い示唆", i: "△" },
-        { w: "短期間に複数回", r: "Vモード濃厚（3連以上確定）", i: "🔥" },
+        { w: "短期間に複数回", r: "Vモード濃厚（3連以上濃厚）", i: "🔥" },
       ],
     });
   if ((a === "7" || b === "7" || c === "7") && !has)
     r.push({
       lv: "h",
-      lb: "7図柄含み → 上位モード示唆",
+      lb: "7図柄含み → 通常モード以上示唆",
       ds: "高モードほど出現率UP（低確:約1/991→天国S:約1/57→超天国:約1/40）。",
       cond: null,
     });
@@ -231,41 +231,41 @@ export function patterns(code: string): PatternMatch[] {
   if (!has && n[0] >= 1 && n[0] % 2 === 1 && n[1] === n[0] + 1 && n[2] === n[0] + 2)
     r.push({
       lv: "s",
-      lb: "奇数順目 → 天国準備以上",
+      lb: "奇数順目 → 天国準備以上濃厚",
       ds: "成立役で変化。",
       cond: [
-        { w: "ハズレ成立", r: "天国ショート以上に格上げ", i: "🔥" },
-        { w: "その他", r: "天国準備以上濃厚", i: "✅" },
+        { w: "ハズレ成立", r: "天国モード（ショート以上）濃厚", i: "🔥" },
+        { w: "その他", r: "天国準備モード以上濃厚", i: "✅" },
       ],
     });
   if (!has && n[0] >= 2 && n[0] % 2 === 0 && n[1] === n[0] + 1 && n[2] === n[0] + 2)
     r.push({
       lv: "m",
-      lb: "偶数順目 → 上位モード示唆",
-      ds: "成立役で変化。",
+      lb: "偶数順目 → 通常モード以上示唆",
+      ds: "成立役で変化。通常モード滞在時に出現しやすい。",
       cond: [
-        { w: "中段青7リプレイ成立", r: "天国準備以上に格上げ", i: "🔥" },
-        { w: "その他", r: "弱い上位モード示唆", i: "△" },
+        { w: "中段青7成立", r: "天国準備モード以上濃厚", i: "🔥" },
+        { w: "その他", r: "通常モード以上期待度UP", i: "△" },
       ],
     });
   if (oq(a) && oq(b) && oq(c) && !(a === b && b === c) && !has)
     r.push({
       lv: "w",
-      lb: "奇数のみ → 弱い上位モード示唆",
+      lb: "奇数のみ → 通常モード以上示唆（弱）",
       ds: "最も弱いモード示唆（低確:約1/64→天国:約1/16→超天国:約1/12 ※前作参考）。",
       cond: null,
     });
   if (eq(a) && oq(b) && oq(c) && b === c && !has)
     r.push({
       lv: "w",
-      lb: "左偶数+奇数ケツテンパイ → 弱い上位モード示唆",
+      lb: "左偶数+奇数ケツテンパイ → 通常モード以上示唆（弱）",
       ds: "奇数のみの次に弱い示唆。",
       cond: null,
     });
   if (oq(a) && oq(b) && oq(c) && b === c && a !== b && !has)
     r.push({
       lv: "m",
-      lb: "左奇数+奇数ケツテンパイ → 通常以上濃厚",
+      lb: "左奇数+奇数ケツテンパイ → 通常モード以上濃厚",
       ds: "偶数順目と同等～やや上。",
       cond: null,
     });
@@ -298,8 +298,8 @@ export const TYPE_STYLES: Record<DemeType, TypeStyle> = {
   gstop_w: { c: "#8FD0EE", accent: "#2a5870", tg: "Z-ZONE前兆(弱)", ic: "△" },
   gstop_s: { c: "#5B9BFF", accent: "#1d3a7a", tg: "Z-ZONE前兆(強)", ic: "▲" },
   ultra:   { c: "#FF66D9", accent: "#7a1e6a", tg: "超天国",         ic: "♛" },
-  t_short: { c: "#C98BFF", accent: "#5a2a80", tg: "天国S以上",      ic: "✦" },
+  t_short: { c: "#C98BFF", accent: "#5a2a80", tg: "天国モード以上", ic: "✦" },
   v_mode:  { c: "#35E68A", accent: "#1a6a40", tg: "Vモード",        ic: "V" },
-  prep:    { c: "#8FE08F", accent: "#2f6a2f", tg: "天国準備↑",      ic: "↑" },
+  prep:    { c: "#8FE08F", accent: "#2f6a2f", tg: "天国準備以上",   ic: "↑" },
   joke:    { c: "#E0B0FF", accent: "#604080", tg: "ジョークMODE",   ic: "🤡" },
 };
