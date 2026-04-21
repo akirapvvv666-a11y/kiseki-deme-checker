@@ -288,6 +288,9 @@ export function patterns(code: string): PatternMatch[] {
       ds: "強いモード示唆。",
       cond: null,
     });
+
+  const priority: Record<PatternLevel, number> = { s: 4, m: 3, v: 2, h: 1, w: 0 };
+  r.sort((x, y) => priority[y.lv] - priority[x.lv]);
   return r;
 }
 
