@@ -104,7 +104,7 @@ body::before{
 /* ============================================================
    Header
    ============================================================ */
-.hdr{ text-align:center; padding:10px 0 6px; }
+.hdr{ text-align:center; padding:6px 0 4px; }
 .hdr-eyebrow{
   font-family:"Cinzel",serif;
   font-size:9px;
@@ -114,10 +114,10 @@ body::before{
   margin-bottom:4px;
 }
 .hdr-title{
-  font-family:"Cinzel",serif;
-  font-weight:900;
-  font-size:24px;
-  letter-spacing:8px;
+  font-family:"Shippori Mincho","Yu Mincho","Cinzel",serif;
+  font-weight:800;
+  font-size:22px;
+  letter-spacing:6px;
   background:linear-gradient(180deg, #fff1c8 0%, #f8d76a 35%, #c98b20 55%, #6e4508 80%, #b87820 100%);
   -webkit-background-clip:text; background-clip:text;
   -webkit-text-fill-color:transparent;

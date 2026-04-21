@@ -33,13 +33,7 @@ export default function App() {
     <div id="app">
       {/* ===== Header ===== */}
       <div className="hdr">
-        <div className="hdr-eyebrow">MILLION · GOD · KISEKI</div>
-        <h1 className="hdr-title">KISEKI</h1>
-        <div className="hdr-jp">神々の軌跡</div>
-        <div className="hdr-laurel">
-          <span>LIQUID · CRYSTAL · CHECKER</span>
-        </div>
-        <div className="hdr-sub">液晶出目チェッカー</div>
+        <h1 className="hdr-title">出目の軌跡</h1>
       </div>
 
       <div className="gk-divider" />
@@ -65,13 +59,6 @@ export default function App() {
               </div>
             );
           })}
-        </div>
-        <div className={`display-status ${done ? "done" : ""}`}>
-          {input.length === 0
-            ? "TAP · TO · INPUT"
-            : done
-            ? "▼ ORACULUM ▼"
-            : `${3 - input.length} · MORE`}
         </div>
       </div>
 
