@@ -157,11 +157,9 @@ export const DB: DemeEntry[] = [
   { code:"020", type:"gstop_s", label:"Z-ZONE強チャンス目", desc:"Z-ZONE前兆示唆（強）。0ハサミ+中偶数。1度でも期待大。", cond:null },
   { code:"0V7", type:"gstop_s", label:"Z-ZONE強チャンス目", desc:"Z-ZONE前兆示唆（強）。0+V+7。1度でも期待大。", cond:null },
 
-  // ===== 超天国濃厚 =====
-  { code:"V7V", type:"ultra", label:"超天国濃厚", desc:"V7ハサミ。最上位モード示唆。即ヤメ厳禁。", cond:null },
-  { code:"700", type:"ultra", label:"超天国濃厚", desc:"7+0ケツテンパイ。超天国モード濃厚。即ヤメ厳禁。", cond:null },
-
   // ===== 天国ショート以上 =====
+  { code:"V7V", type:"t_short", label:"天国ショート以上濃厚", desc:"V7ハサミ。天国ショート以上濃厚。", cond:null },
+  { code:"700", type:"t_short", label:"天国ショート以上濃厚", desc:"7+0ケツテンパイ。天国ショート以上濃厚。", cond:null },
   { code:"V1V", type:"t_short", label:"天国ショート以上濃厚", desc:"Vハサミ+中奇数。", cond:null },
   { code:"V3V", type:"t_short", label:"天国ショート以上濃厚", desc:"Vハサミ+中奇数。", cond:null },
   { code:"V5V", type:"t_short", label:"天国ショート以上濃厚", desc:"Vハサミ+中奇数。", cond:null },
