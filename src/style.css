@@ -1,0 +1,613 @@
+/* ============================================================
+   神々の軌跡 液晶出目チェッカー
+   ゴツゴツ・重量感のあるゴシック／赤＝奇数・V・0、金＝偶数
+   オリジナルデザイン（ブランドUIは模倣しない）
+   ============================================================ */
+
+:root{
+  /* Obsidian */
+  --bg-0:#05040a;
+  --bg-panel:#0a0705;
+  --line:#2a1c0a;
+  --line-dim:#1a130a;
+  --line-hot:#3d2a10;
+
+  /* Gold */
+  --g-mid:#a87220;
+  --g-bright:#f8d76a;
+  --g-pale:#ffefb0;
+
+  /* Ink */
+  --ink-hi:#f3e7cf;
+  --ink-md:#a89880;
+  --ink-lo:#6a5a44;
+  --ink-xlo:#3d3528;
+
+  /* Accents */
+  --crimson:#c81e28;
+  --crimson-deep:#5a0a10;
+  --emerald:#35e68a;
+  --sapphire:#5b9bff;
+
+  --r-sm:4px;
+  --r-md:8px;
+  --r-lg:12px;
+
+  /* ===== DIGIT: 奇数/V/0 = 赤系、偶数 = 金系 ===== */
+  --dig-red-hi:   #ffd6c8;
+  --dig-red-1:    #ff7248;
+  --dig-red-2:    #e8181a;
+  --dig-red-3:    #8a0410;
+  --dig-red-deep: #3a0208;
+
+  --dig-gold-hi:  #fff3c8;
+  --dig-gold-1:   #fde58f;
+  --dig-gold-2:   #f8b22a;
+  --dig-gold-3:   #8a5010;
+  --dig-gold-deep:#3a2206;
+
+  --dig-V-hi:   #ffd6c8;
+  --dig-V-1:    #ff6a48;
+  --dig-V-2:    #d8161a;
+  --dig-V-3:    #6a0a10;
+
+  --dig-S-hi:   #ffd6c8;
+  --dig-S-1:    #ff8060;
+  --dig-S-2:    #ee1a1e;
+  --dig-S-3:    #7a0814;
+}
+
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{margin:0;padding:0;}
+body{
+  font-family:"Noto Sans JP","Hiragino Kaku Gothic Pro","Yu Gothic",sans-serif;
+  background:
+    radial-gradient(ellipse at 50% -10%, #281305 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 110%, #1a0a05 0%, transparent 55%),
+    #05040a;
+  color:var(--ink-hi);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";
+  position:fixed; inset:0;
+  background:
+    repeating-linear-gradient(90deg, rgba(255,215,106,.015) 0 1px, transparent 1px 80px),
+    repeating-linear-gradient(0deg, rgba(255,215,106,.015) 0 1px, transparent 1px 80px);
+  pointer-events:none;
+  z-index:0;
+}
+
+#app{
+  max-width:420px;
+  margin:0 auto;
+  padding:14px 14px 40px;
+  position:relative;
+  z-index:1;
+}
+
+/* ============================================================
+   Greek-key divider
+   ============================================================ */
+.gk-divider{
+  height:10px;
+  background-image:linear-gradient(90deg, transparent 0, var(--g-mid) 50%, transparent 100%);
+  -webkit-mask:repeating-linear-gradient(90deg,
+      #000 0 2px, transparent 2px 4px, #000 4px 8px, transparent 8px 10px, #000 10px 12px);
+          mask:repeating-linear-gradient(90deg,
+      #000 0 2px, transparent 2px 4px, #000 4px 8px, transparent 8px 10px, #000 10px 12px);
+  opacity:.7;
+  margin:8px 0;
+}
+
+/* ============================================================
+   Header
+   ============================================================ */
+.hdr{ text-align:center; padding:10px 0 6px; }
+.hdr-eyebrow{
+  font-family:"Cinzel",serif;
+  font-size:9px;
+  letter-spacing:6px;
+  color:var(--g-mid);
+  font-weight:600;
+  margin-bottom:4px;
+}
+.hdr-title{
+  font-family:"Cinzel",serif;
+  font-weight:900;
+  font-size:24px;
+  letter-spacing:8px;
+  background:linear-gradient(180deg, #fff1c8 0%, #f8d76a 35%, #c98b20 55%, #6e4508 80%, #b87820 100%);
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 1px 0 #000) drop-shadow(0 0 6px rgba(255,215,106,.25));
+  margin:0;
+}
+.hdr-jp{
+  font-family:"Shippori Mincho","Yu Mincho",serif;
+  font-size:13px;
+  letter-spacing:4px;
+  color:var(--g-bright);
+  margin-top:2px;
+  text-shadow:0 0 8px rgba(255,215,106,.2);
+}
+.hdr-sub{
+  font-size:10px;
+  color:var(--ink-md);
+  letter-spacing:3px;
+  margin-top:6px;
+  font-weight:500;
+}
+.hdr-laurel{
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  margin-top:6px;
+}
+.hdr-laurel::before,.hdr-laurel::after{
+  content:"";
+  height:1px; flex:1; max-width:60px;
+  background:linear-gradient(90deg, transparent, var(--g-mid), transparent);
+}
+.hdr-laurel span{
+  font-family:"Cinzel",serif; font-size:8px; letter-spacing:4px;
+  color:var(--ink-lo);
+}
+
+.frame{
+  position:relative;
+  background:linear-gradient(180deg, #0f0a06 0%, #070502 100%);
+  border:1px solid var(--line);
+  border-radius:var(--r-lg);
+  padding:16px 14px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,215,106,.08),
+    inset 0 0 40px rgba(0,0,0,.6),
+    0 2px 10px rgba(0,0,0,.5);
+}
+.frame::before,.frame::after{
+  content:"";
+  position:absolute;
+  width:14px; height:14px;
+  border:1px solid var(--g-mid);
+  opacity:.5;
+}
+.frame::before{ top:4px; left:4px;    border-right:none; border-bottom:none; }
+.frame::after { bottom:4px; right:4px; border-left:none;  border-top:none;   }
+
+/* ============================================================
+   Display
+   ============================================================ */
+.display{ margin-top:12px; position:relative; padding:20px 12px 14px; }
+.display-lbl{
+  position:absolute; top:-7px; left:50%; transform:translateX(-50%);
+  background:var(--bg-0);
+  padding:0 10px;
+  font-family:"Cinzel",serif;
+  font-size:9px; letter-spacing:5px;
+  color:var(--g-mid); font-weight:700;
+}
+
+.digit-row{ display:flex; justify-content:center; gap:10px; margin-bottom:10px; }
+
+.digit-cell{
+  width:82px; height:104px;
+  position:relative;
+  background:
+    radial-gradient(ellipse at 50% 20%, #2a1e0a 0%, transparent 70%),
+    linear-gradient(180deg, #100a04 0%, #05030a 100%);
+  border:1px solid var(--line);
+  border-radius:6px;
+  box-shadow:
+    inset 0 2px 4px rgba(0,0,0,.8),
+    inset 0 -1px 0 rgba(255,215,106,.04),
+    0 1px 0 rgba(255,215,106,.03);
+  display:flex; align-items:center; justify-content:center;
+  transition:border-color .2s, box-shadow .2s;
+}
+.digit-cell.filled{
+  border-color:rgba(248,215,106,.35);
+  box-shadow:
+    inset 0 2px 4px rgba(0,0,0,.8),
+    inset 0 0 22px rgba(200,30,40,.18),
+    0 0 16px rgba(200,30,40,.12);
+}
+.digit-cell.filled.even{
+  box-shadow:
+    inset 0 2px 4px rgba(0,0,0,.8),
+    inset 0 0 22px rgba(255,170,40,.18),
+    0 0 16px rgba(255,170,40,.12);
+}
+.digit-cell.cursor::after{
+  content:"";
+  position:absolute;
+  bottom:14px; left:50%; transform:translateX(-50%);
+  width:36px; height:2px;
+  background:var(--g-bright);
+  opacity:.6;
+  animation:blink 1s infinite;
+}
+@keyframes blink{ 50%{opacity:0;} }
+
+/* ============================================================
+   THE DIGIT — 極太ゴシック、均一太さストローク、立体感
+   フォント: "Black Ops One"（均一太さ／角ばった）
+   ============================================================ */
+.god-digit{
+  font-family:"Archivo Black","Arial Black",sans-serif;
+  font-weight:900;
+  font-size:68px;
+  line-height:1;
+  letter-spacing:-1px;
+  position:relative;
+  display:inline-block;
+
+  /* デフォルト：奇数・0・V・S は赤 */
+  background:linear-gradient(180deg,
+    var(--dig-red-hi) 0%,
+    #ff9a70 12%,
+    var(--dig-red-1) 28%,
+    var(--dig-red-2) 50%,
+    var(--dig-red-3) 74%,
+    var(--dig-red-deep) 92%,
+    #c8141a 100%);
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  /* 立体感：ゴールド縁取り + 厚み + 影 + グロー */
+  filter:
+    drop-shadow(-1px 0 0 #1a0204)
+    drop-shadow(1px 0 0 #1a0204)
+    drop-shadow(0 -1px 0 #1a0204)
+    drop-shadow(0 1px 0 #6e0a12)      /* 下エッジの厚み（暗） */
+    drop-shadow(0 2px 0 #2a0408)      /* さらに下（厚み） */
+    drop-shadow(0 3px 3px rgba(0,0,0,.85))
+    drop-shadow(0 0 10px rgba(255,80,40,.35));
+}
+
+/* 偶数＝金 */
+.god-digit[data-kind="gold"]{
+  background:linear-gradient(180deg,
+    var(--dig-gold-hi) 0%,
+    var(--dig-gold-1) 18%,
+    #fbd15a 36%,
+    var(--dig-gold-2) 52%,
+    var(--dig-gold-3) 76%,
+    var(--dig-gold-deep) 92%,
+    #e8a530 100%);
+  -webkit-background-clip:text; background-clip:text;
+  filter:
+    drop-shadow(-1px 0 0 #1a1202)
+    drop-shadow(1px 0 0 #1a1202)
+    drop-shadow(0 -1px 0 #1a1202)
+    drop-shadow(0 1px 0 #6e4410)
+    drop-shadow(0 2px 0 #2a1808)
+    drop-shadow(0 3px 3px rgba(0,0,0,.85))
+    drop-shadow(0 0 10px rgba(255,170,40,.4));
+}
+
+/* 7は赤だが、元画像では金にも近いトーン → 赤のまま（奇数） */
+/* Vは赤系で独自トーン */
+.god-digit[data-ch="V"]{
+  background:linear-gradient(180deg,
+    var(--dig-V-hi) 0%,
+    #ff8460 15%,
+    var(--dig-V-1) 32%,
+    var(--dig-V-2) 54%,
+    var(--dig-V-3) 80%,
+    #3a0508 96%,
+    #c81418 100%);
+  -webkit-background-clip:text; background-clip:text;
+}
+/* Sも赤系（僅かに差） */
+.god-digit[data-ch="S"]{
+  background:linear-gradient(180deg,
+    var(--dig-S-hi) 0%,
+    var(--dig-S-1) 20%,
+    var(--dig-S-2) 48%,
+    var(--dig-S-3) 78%,
+    #3a0408 96%,
+    #d81a20 100%);
+  -webkit-background-clip:text; background-clip:text;
+}
+
+.display-status{
+  text-align:center;
+  font-family:"Cinzel",serif;
+  font-size:9px; letter-spacing:4px;
+  color:var(--ink-lo); font-weight:600;
+  padding:4px 0 0;
+}
+.display-status.done{
+  color:var(--g-bright);
+  text-shadow:0 0 8px rgba(255,215,106,.3);
+}
+
+/* ============================================================
+   Keypad — キー内ラベルも同じ極太ゴシックで統一
+   ============================================================ */
+.kp-wrap{ margin-top:14px; }
+.kp-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+}
+.key{
+  appearance:none; border:none; cursor:pointer; position:relative;
+  padding:14px 0;
+  font-family:"Archivo Black","Arial Black",sans-serif;
+  font-size:32px; font-weight:900; line-height:1;
+  color:var(--ink-hi);
+  background:linear-gradient(180deg, #2a1d0a 0%, #1a1206 45%, #0d0802 100%);
+  border:1px solid var(--line);
+  border-radius:var(--r-md);
+  box-shadow:
+    inset 0 1px 0 rgba(255,215,106,.12),
+    inset 0 -2px 0 rgba(0,0,0,.6),
+    0 2px 4px rgba(0,0,0,.5);
+  transition:transform .08s, box-shadow .12s, border-color .12s;
+  overflow:hidden;
+  min-height:58px;
+}
+.key::before{
+  content:"";
+  position:absolute; inset:3px;
+  border-radius:5px;
+  border:1px solid rgba(168,114,32,.22);
+  pointer-events:none;
+}
+.key .k-label{
+  position:relative; z-index:1;
+  display:inline-block;
+  /* 奇数・V・S・0 → 赤 */
+  background:linear-gradient(180deg,
+    var(--dig-red-hi) 0%, var(--dig-red-1) 35%,
+    var(--dig-red-2) 60%, var(--dig-red-3) 90%);
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent;
+  filter:
+    drop-shadow(-1px 0 0 #1a0204)
+    drop-shadow(1px 0 0 #1a0204)
+    drop-shadow(0 1px 0 #5a0810)
+    drop-shadow(0 2px 2px rgba(0,0,0,.8));
+}
+.key[data-kind="gold"] .k-label{
+  background:linear-gradient(180deg,
+    var(--dig-gold-hi) 0%, var(--dig-gold-1) 35%,
+    var(--dig-gold-2) 60%, var(--dig-gold-3) 90%);
+  -webkit-background-clip:text; background-clip:text;
+  filter:
+    drop-shadow(-1px 0 0 #1a1202)
+    drop-shadow(1px 0 0 #1a1202)
+    drop-shadow(0 1px 0 #5a3a08)
+    drop-shadow(0 2px 2px rgba(0,0,0,.8));
+}
+
+.key:not(:disabled):hover{
+  border-color:rgba(248,215,106,.45);
+  box-shadow:
+    inset 0 1px 0 rgba(255,215,106,.2),
+    inset 0 0 16px rgba(255,170,40,.15),
+    0 2px 8px rgba(255,170,40,.15);
+}
+.key:not(:disabled):active{
+  transform:translateY(1px);
+  box-shadow:inset 0 2px 6px rgba(0,0,0,.7);
+}
+.key:disabled{ opacity:.28; cursor:not-allowed; }
+
+.key.back{
+  font-family:"Cinzel",serif;
+  font-size:22px;
+  background:linear-gradient(180deg,#2a0a08 0%,#1a0604 50%,#0d0302 100%);
+  border-color:#3a141a;
+}
+.key.back .k-label{
+  background:linear-gradient(180deg,#ffc8c8 0%,#ff6a6a 50%,#8a1d24 100%);
+  -webkit-background-clip:text; background-clip:text;
+  filter:drop-shadow(0 1px 0 #000);
+}
+
+/* ============================================================
+   Controls — クリアのみ、キーと同じ高さで押しやすく
+   ============================================================ */
+.ctrl-row{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:8px;
+  margin-top:10px;
+}
+.ctrl-btn{
+  appearance:none; cursor:pointer;
+  padding:0;
+  min-height:58px;
+  font-family:"Cinzel","Noto Sans JP",sans-serif;
+  font-size:16px; font-weight:700; letter-spacing:6px;
+  background:linear-gradient(180deg,#2a0e0c 0%,#180604 50%,#0a0302 100%);
+  border:1px solid #4a1a20;
+  border-radius:var(--r-md);
+  color:#ffb0a0;
+  box-shadow:
+    inset 0 1px 0 rgba(255,130,120,.15),
+    inset 0 -2px 0 rgba(0,0,0,.6),
+    0 2px 6px rgba(0,0,0,.5);
+  transition:all .15s;
+  position:relative;
+}
+.ctrl-btn::before{
+  content:"";
+  position:absolute; inset:3px;
+  border-radius:5px;
+  border:1px solid rgba(200,30,40,.25);
+  pointer-events:none;
+}
+.ctrl-btn:hover{
+  border-color:#8a2028;
+  color:#ffdcd0;
+  box-shadow:
+    inset 0 1px 0 rgba(255,130,120,.2),
+    inset 0 0 16px rgba(200,30,40,.2),
+    0 2px 8px rgba(200,30,40,.2);
+}
+.ctrl-btn:active{ transform:translateY(1px); }
+
+/* ============================================================
+   Result cards
+   ============================================================ */
+.result-section{ margin-top:16px; animation:fadeIn .25s ease-out; }
+@keyframes fadeIn{ from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:translateY(0);} }
+
+.section-eyebrow{
+  display:flex; align-items:center; gap:8px;
+  font-family:"Cinzel",serif;
+  font-size:9px; letter-spacing:4px;
+  color:var(--g-mid); font-weight:700;
+  margin:8px 0 6px;
+}
+.section-eyebrow::after{
+  content:""; flex:1; height:1px;
+  background:linear-gradient(90deg,var(--g-mid),transparent);
+  opacity:.4;
+}
+
+.rcard{
+  position:relative;
+  background:linear-gradient(180deg,#0d0906 0%,#060402 100%);
+  border:1px solid var(--line);
+  border-radius:var(--r-md);
+  padding:12px 14px;
+  margin-bottom:8px;
+  overflow:hidden;
+}
+.rcard::before{
+  content:"";
+  position:absolute; left:0; top:0; bottom:0;
+  width:3px;
+  background:var(--accent,var(--g-mid));
+  box-shadow:0 0 8px var(--accent,var(--g-mid));
+}
+
+.rcard-head{
+  display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+  margin-bottom:6px;
+}
+.rtag{
+  display:inline-flex; align-items:center; gap:4px;
+  font-family:"Cinzel",serif;
+  font-size:9px; font-weight:900; letter-spacing:2px;
+  padding:3px 8px;
+  border-radius:3px;
+  color:#0a0704;
+  background:var(--c,#f8d76a);
+  text-shadow:0 1px 0 rgba(255,255,255,.3);
+  white-space:nowrap;
+  flex-shrink:0;
+}
+.rtag-ic{ font-size:10px; }
+
+.rcard-code{
+  font-family:"Archivo Black","Arial Black",sans-serif;
+  font-weight:900;
+  font-size:22px;
+  letter-spacing:2px;
+  white-space:nowrap;
+  flex-shrink:0;
+  background:linear-gradient(180deg,#fff3c8,#f8d76a 40%,#c98b20 70%,#7a4a10);
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 1px 0 #000) drop-shadow(0 2px 2px rgba(0,0,0,.6));
+}
+.rcard-code[data-typec]{
+  background:linear-gradient(180deg,#ffffff, var(--c) 45%, color-mix(in oklab, var(--c) 50%, #000) 100%);
+  -webkit-background-clip:text; background-clip:text;
+}
+.rcard-label{
+  font-size:13px; font-weight:700;
+  color:var(--ink-hi);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  min-width:0; flex:1;
+}
+.rcard-desc{
+  font-size:12px; color:var(--ink-md);
+  line-height:1.7;
+}
+.rcard-empty{
+  text-align:center;
+  padding:18px 10px;
+  font-size:12px;
+  color:var(--ink-xlo);
+  border:1px dashed var(--line-dim);
+  border-radius:var(--r-md);
+  font-family:"Cinzel",serif;
+  letter-spacing:3px;
+}
+
+/* Conds subcard */
+.conds{
+  margin-top:10px;
+  background:rgba(0,0,0,.4);
+  border-radius:var(--r-sm);
+  padding:8px 10px;
+  border-left:2px solid var(--accent,var(--g-mid));
+}
+.conds-head{
+  font-family:"Cinzel",serif;
+  font-size:8px; letter-spacing:3px;
+  color:var(--g-mid); font-weight:700;
+  margin-bottom:4px;
+}
+.cond-row{
+  display:flex; gap:8px;
+  padding:5px 0;
+  border-bottom:1px solid rgba(255,215,106,.06);
+  align-items:flex-start;
+}
+.cond-row:last-child{ border-bottom:none; }
+.cond-ic{ font-size:13px; flex-shrink:0; line-height:1.2; margin-top:1px; }
+.cond-body{ flex:1; min-width:0; }
+.cond-when{ font-size:10px; color:var(--ink-lo); font-weight:700; letter-spacing:1px; }
+.cond-result{ font-size:12px; color:var(--ink-hi); line-height:1.5; margin-top:1px; }
+
+/* Pattern cards */
+.pcard{
+  background:linear-gradient(180deg,#0d0a06 0%,#050402 100%);
+  border:1px solid var(--line-dim);
+  border-radius:var(--r-md);
+  padding:10px 12px;
+  margin-bottom:6px;
+  position:relative;
+}
+.pcard-lbl{
+  font-size:12px; font-weight:700;
+  color:var(--pc,#e5cc84);
+  margin-bottom:3px;
+}
+.pcard-ds{
+  font-size:11px; color:var(--ink-md);
+  line-height:1.6;
+}
+
+/* Footer */
+.foot{
+  margin-top:20px;
+  text-align:center;
+  font-family:"Cinzel",serif;
+  font-size:8px; letter-spacing:4px;
+  color:var(--ink-xlo);
+}
+
+/* 初期ヒント（凡例に代わるコンパクトなメッセージ） */
+.idle-hint{
+  margin-top:20px;
+  text-align:center;
+  font-family:"Cinzel",serif;
+  font-size:10px;
+  letter-spacing:5px;
+  color:var(--ink-lo);
+}
+.idle-hint-jp{
+  margin-top:6px;
+  font-family:"Noto Sans JP",sans-serif;
+  font-size:11px;
+  color:var(--ink-lo);
+  letter-spacing:2px;
+}
