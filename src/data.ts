@@ -221,8 +221,8 @@ export function patterns(code: string): PatternMatch[] {
   if ((a === "7" || b === "7" || c === "7") && !has)
     r.push({
       lv: "h",
-      lb: "7図柄含み → 通常モード以上示唆",
-      ds: "高モードほど出現率UP（低確:約1/991→天国S:約1/57→超天国:約1/40）。",
+      lb: "7図柄含み → 複数回出現で天国以上示唆",
+      ds: "高モードほど出現率UP（低確:約1/991→天国S:約1/57→超天国:約1/40）。単発は弱い。",
       cond: null,
     });
   const n = [a, b, c].map((x) => ("0123456789".includes(x) ? +x : -1));
