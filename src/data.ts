@@ -169,7 +169,8 @@ export const DB: DemeEntry[] = [
   { code:"V77", type:"t_short", label:"天国ショート以上濃厚", desc:"V+7ケツテンパイ。", cond:null },
 
   // ===== Vモード =====
-  { code:"V0V", type:"v_mode", label:"Vモード濃厚", desc:"Vモード（天国準備B）濃厚。AT当選時3連以上濃厚。", cond:null },
+  { code:"V0V", type:"v_mode", label:"Vモード示唆", desc:"Vハサミ+中0。",
+    cond:[{w:"単発",r:"天国以上示唆。天国中 1/140〜1/190 に対し天国以外は約1/1000（※前作参考値）",i:"△"},{w:"頻発",r:"Vモード滞在濃厚（1/6.8 ※前作参考値）",i:"🔥"}] },
   { code:"V2V", type:"v_mode", label:"Vモード示唆/チャンス目", desc:"Vハサミ+中偶数。チャンス目兼用。",
     cond:[{w:"単発",r:"天国以上示唆。天国中 1/140〜1/190 に対し天国以外は約1/1000（※前作参考値）",i:"△"},{w:"頻発",r:"Vモード滞在濃厚（1/6.8 ※前作参考値）",i:"🔥"}] },
   { code:"V4V", type:"v_mode", label:"Vモード示唆/チャンス目", desc:"Vハサミ+中偶数。チャンス目兼用。",
@@ -180,7 +181,8 @@ export const DB: DemeEntry[] = [
     cond:[{w:"単発",r:"天国以上示唆。天国中 1/140〜1/190 に対し天国以外は約1/1000（※前作参考値）",i:"△"},{w:"頻発",r:"Vモード滞在濃厚（1/6.8 ※前作参考値）",i:"🔥"}] },
 
   // ===== 天国準備以上 =====
-  ...["131","151","171","313","353","373","515","535","575","717","737","757"].map<DemeEntry>(c=>({code:c,type:"prep",label:"天国準備以上濃厚",desc:"奇数ハサミ+中奇数。",cond:null})),
+  ...["131","151","171","313","353","373","515","535","575","717","737"].map<DemeEntry>(c=>({code:c,type:"prep",label:"天国準備以上濃厚",desc:"奇数ハサミ+中奇数。",cond:null})),
+  { code:"757", type:"t_short", label:"天国以上濃厚", desc:"7ハサミ+中奇数。", cond:null },
   ...["010","030","050","070"].map<DemeEntry>(c=>({code:c,type:"prep",label:"天国準備以上濃厚",desc:"0ハサミ+中奇数。凱旋から追加の0図柄パターン。",cond:null})),
   ...["177","377","577"].map<DemeEntry>(c=>({code:c,type:"prep",label:"天国準備以上濃厚",desc:"左奇数+7ケツテンパイ。",cond:null})),
   { code:"345", type:"prep", label:"天国準備以上示唆（強）", desc:"奇数順目。", cond:null },
@@ -188,8 +190,9 @@ export const DB: DemeEntry[] = [
   { code:"234", type:"normal", label:"通常モード以上示唆", desc:"偶数順目。リプ成立時出現で天国準備以上示唆（強）。", cond:null },
   { code:"456", type:"normal", label:"通常モード以上示唆", desc:"偶数順目。リプ成立時出現で天国準備以上示唆（強）。", cond:null },
   { code:"678", type:"normal", label:"通常モード以上示唆", desc:"偶数順目。リプ成立時出現で天国準備以上示唆（強）。", cond:null },
-  ...["727","747","767","787"].map<DemeEntry>(c=>({code:c,type:"prep",label:"天国準備以上濃厚",desc:"7ハサミ+中偶数。遅れが条件。",
+  ...["727","767","787"].map<DemeEntry>(c=>({code:c,type:"prep",label:"天国準備以上濃厚",desc:"7ハサミ+中偶数。遅れが条件。",
     cond:[{w:"遅れ演出あり",r:"天国準備以上濃厚",i:"🔥"},{w:"遅れなし",r:"特に意味なし",i:"—"}]})),
+  { code:"747", type:"t_short", label:"天国以上示唆（強）", desc:"7ハサミ+中偶数。", cond:null },
   ...["701","703","705"].map<DemeEntry>(c=>({code:c,type:"prep",label:"天国準備以上濃厚",desc:"70+奇数。遅れが条件。",
     cond:[{w:"遅れ演出あり",r:"天国準備以上濃厚",i:"🔥"},{w:"遅れなし",r:"特に意味なし",i:"—"}]})),
 ];
