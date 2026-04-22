@@ -162,6 +162,7 @@ export const DB: DemeEntry[] = [
   { code:"674", type:"joke", label:"出前目", desc:"<ジョークMODE>出前目。なんか大体ハマってる時に見かける気がする。ちょっとだけ寂しくなる出前。", cond:null },
   { code:"874", type:"joke", label:"ハナシ目", desc:"<ジョークMODE>ハナシ目。人の話をちゃんと聞きなさい！って小さい頃言われてた気がする。いや、昨日も言われていた。", cond:null },
   { code:"084", type:"joke", label:"お箸目", desc:"<ジョークMODE>お箸目。🥢", cond:null },
+  { code:"251", type:"joke", label:"ニゴイ目", desc:"<ジョークMODE>ニゴイ目。コイ科・カマツカ亜科に分類される魚の一種で、急流でない川や湖沼などに生息する日本の固有種の淡水魚。", cond:null },
 
   // ===== Z-ZONEチャンス目 =====
   { code:"017", type:"gstop_w", label:"Z-ZONE弱チャンス目", desc:"Z-ZONE前兆示唆（弱）。0頭+7含み。頻出すれば期待。", cond:null },
