@@ -243,7 +243,7 @@ export function patterns(code: string): PatternMatch[] {
         { w: "その他", r: "通常モード以上期待度UP", i: "△" },
       ],
     });
-  if (oq(a) && oq(b) && oq(c) && !(a === b && b === c) && !has)
+  if (oq(a) && oq(b) && oq(c) && b !== c && !has)
     r.push({
       lv: "w",
       lb: "奇数のみ → 通常モード以上示唆（弱）",
