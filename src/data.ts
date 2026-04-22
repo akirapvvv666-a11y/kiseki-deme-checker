@@ -149,6 +149,8 @@ export const DB: DemeEntry[] = [
   { code:"454", type:"joke", label:"シコ目", desc:"<ジョークMODE>シコ目。072目の親戚。検索傾向から察するに、今日の稼働は長くなりそうですね。水分補給を忘れずに。", cond:null },
   { code:"117", type:"joke", label:"時報目", desc:"<ジョークMODE>時報目。ピッ、ピッ、ピッ、ポーン。現在の時刻をお知らせします。「もう一回だけ」と思ってから、すでに3時間経過しています。", cond:null },
   { code:"081", type:"joke", label:"π目", desc:"<ジョークMODE>π目。出たらある意味ゴール。", cond:null },
+  { code:"484", type:"joke", label:"冥界目", desc:"<ジョークMODE>冥界目。名機アナザーゴッドハーデスでは冥界目として君臨した。本作で意味があるかは不明だが出現したら挙動に注意。", cond:null },
+  { code:"848", type:"joke", label:"冥界目", desc:"<ジョークMODE>冥界目。名機アナザーゴッドハーデスでは冥界目として君臨した。本作で意味があるかは不明だが出現したら挙動に注意。", cond:null },
 
   // ===== Z-ZONEチャンス目 =====
   { code:"017", type:"gstop_w", label:"Z-ZONE弱チャンス目", desc:"Z-ZONE前兆示唆（弱）。0頭+7含み。頻出すれば期待。", cond:null },
