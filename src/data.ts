@@ -153,6 +153,7 @@ export const DB: DemeEntry[] = [
   { code:"848", type:"joke", label:"冥界目", desc:"<ジョークMODE>冥界目。名機アナザーゴッドハーデスでは冥界目として君臨した。本作で意味があるかは不明だが出現したら挙動に注意。", cond:null },
   { code:"810", type:"joke", label:"野獣目", desc:"<ジョークMODE>野獣目。24歳、学生です。イキスギィ！な投資額にはご注意ください。", cond:null },
   { code:"114", type:"joke", label:"いいよ目", desc:"<ジョークMODE>いいよ目。次に514が来た場合、当アプリは一切の責任を負いません。", cond:null },
+  { code:"413", type:"joke", label:"シーサ。目", desc:"<ジョークMODE>シーサ。目。出たらおでこを光らせてください。すると異常なまでに強いヒキが発揮できるでしょう。", cond:null },
 
   // ===== Z-ZONEチャンス目 =====
   { code:"017", type:"gstop_w", label:"Z-ZONE弱チャンス目", desc:"Z-ZONE前兆示唆（弱）。0頭+7含み。頻出すれば期待。", cond:null },
