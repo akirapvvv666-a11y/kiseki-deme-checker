@@ -10,6 +10,7 @@ export type DemeType =
   | "t_short"
   | "v_mode"
   | "prep"
+  | "normal"
   | "joke";
 
 export interface Condition {
@@ -182,16 +183,11 @@ export const DB: DemeEntry[] = [
   ...["131","151","171","313","353","373","515","535","575","717","737","757"].map<DemeEntry>(c=>({code:c,type:"prep",label:"天国準備以上濃厚",desc:"奇数ハサミ+中奇数。",cond:null})),
   ...["010","030","050","070"].map<DemeEntry>(c=>({code:c,type:"prep",label:"天国準備以上濃厚",desc:"0ハサミ+中奇数。凱旋から追加の0図柄パターン。",cond:null})),
   ...["177","377","577"].map<DemeEntry>(c=>({code:c,type:"prep",label:"天国準備以上濃厚",desc:"左奇数+7ケツテンパイ。",cond:null})),
-  { code:"345", type:"prep", label:"天国準備/天国モード示唆", desc:"奇数順目。成立役で変化。",
-    cond:[{w:"ハズレ成立",r:"天国モード（ショート以上）濃厚に格上げ",i:"🔥"},{w:"リプレイ等",r:"天国準備モード以上濃厚",i:"✅"}] },
-  { code:"567", type:"prep", label:"天国準備/天国モード示唆", desc:"奇数順目。成立役で変化。",
-    cond:[{w:"ハズレ成立",r:"天国モード（ショート以上）濃厚に格上げ",i:"🔥"},{w:"リプレイ等",r:"天国準備モード以上濃厚",i:"✅"}] },
-  { code:"234", type:"prep", label:"通常モード以上示唆", desc:"偶数順目。成立役で変化。",
-    cond:[{w:"中段青7成立",r:"天国準備モード以上濃厚に格上げ",i:"🔥"},{w:"その他",r:"通常モード以上の期待度UP",i:"△"}] },
-  { code:"456", type:"prep", label:"通常モード以上示唆", desc:"偶数順目。成立役で変化。",
-    cond:[{w:"中段青7成立",r:"天国準備モード以上濃厚に格上げ",i:"🔥"},{w:"その他",r:"通常モード以上の期待度UP",i:"△"}] },
-  { code:"678", type:"prep", label:"通常モード以上示唆", desc:"偶数順目。成立役で変化。",
-    cond:[{w:"中段青7成立",r:"天国準備モード以上濃厚に格上げ",i:"🔥"},{w:"その他",r:"通常モード以上の期待度UP",i:"△"}] },
+  { code:"345", type:"prep", label:"天国準備以上示唆（強）", desc:"奇数順目。", cond:null },
+  { code:"567", type:"prep", label:"天国準備以上示唆（強）", desc:"奇数順目。", cond:null },
+  { code:"234", type:"normal", label:"通常モード以上示唆", desc:"偶数順目。リプ成立時出現で天国準備以上示唆（強）。", cond:null },
+  { code:"456", type:"normal", label:"通常モード以上示唆", desc:"偶数順目。リプ成立時出現で天国準備以上示唆（強）。", cond:null },
+  { code:"678", type:"normal", label:"通常モード以上示唆", desc:"偶数順目。リプ成立時出現で天国準備以上示唆（強）。", cond:null },
   ...["727","747","767","787"].map<DemeEntry>(c=>({code:c,type:"prep",label:"天国準備以上濃厚",desc:"7ハサミ+中偶数。遅れが条件。",
     cond:[{w:"遅れ演出あり",r:"天国準備以上濃厚",i:"🔥"},{w:"遅れなし",r:"特に意味なし",i:"—"}]})),
   ...["701","703","705"].map<DemeEntry>(c=>({code:c,type:"prep",label:"天国準備以上濃厚",desc:"70+奇数。遅れが条件。",
@@ -303,5 +299,6 @@ export const TYPE_STYLES: Record<DemeType, TypeStyle> = {
   t_short: { c: "#C98BFF", accent: "#5a2a80", tg: "天国モード以上", ic: "✦" },
   v_mode:  { c: "#35E68A", accent: "#1a6a40", tg: "Vモード",        ic: "V" },
   prep:    { c: "#8FE08F", accent: "#2f6a2f", tg: "天国準備以上",   ic: "↑" },
+  normal:  { c: "#C9C07E", accent: "#5a5230", tg: "通常以上",       ic: "↗" },
   joke:    { c: "#E0B0FF", accent: "#604080", tg: "ジョークMODE",   ic: "🤡" },
 };
