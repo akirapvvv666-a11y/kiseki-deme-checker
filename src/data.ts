@@ -209,7 +209,7 @@ export function patterns(code: string): PatternMatch[] {
     r.push({
       lv: "v",
       lb: "V図柄含み → Vモード示唆",
-      ds: "V図柄が短期間に集中すればVモード濃厚（V出現率:約1/4.66 ※前作参考）。単発は弱い。",
+      ds: "V出現率: Vモード中 約1/4.66、その他 約1/132〜1/24（※前作参考値）。短期間に集中すればVモード濃厚。",
       cond: [
         { w: "単発", r: "弱い示唆", i: "△" },
         { w: "短期間に複数回", r: "Vモード濃厚（3連以上濃厚）", i: "🔥" },
@@ -243,18 +243,11 @@ export function patterns(code: string): PatternMatch[] {
         { w: "その他", r: "通常モード以上期待度UP", i: "△" },
       ],
     });
-  if (oq(a) && oq(b) && oq(c) && b !== c && !has)
-    r.push({
-      lv: "w",
-      lb: "奇数のみ → 通常モード以上示唆（弱）",
-      ds: "最も弱いモード示唆（低確:約1/64→天国:約1/16→超天国:約1/12 ※前作参考）。",
-      cond: null,
-    });
   if (eq(a) && oq(b) && oq(c) && b === c && !has)
     r.push({
       lv: "w",
       lb: "左偶数+奇数ケツテンパイ → 通常モード以上示唆（弱）",
-      ds: "奇数のみの次に弱い示唆。",
+      ds: "弱い示唆。",
       cond: null,
     });
   if (oq(a) && oq(b) && oq(c) && b === c && a !== b && !has)
@@ -262,6 +255,13 @@ export function patterns(code: string): PatternMatch[] {
       lv: "m",
       lb: "左奇数+奇数ケツテンパイ → 通常モード以上濃厚",
       ds: "偶数順目と同等～やや上。",
+      cond: null,
+    });
+  if (!has && b === c && a !== b && ((oq(a) && b === "V") || (a === "V" && oq(b))))
+    r.push({
+      lv: "m",
+      lb: "左奇数+奇数ケツテンパイ → 通常モード以上濃厚",
+      ds: "V関与のケツテンパイ。V含み示唆と併せて判断。",
       cond: null,
     });
   if (oq(a) && a === b && c !== a && !has) {
