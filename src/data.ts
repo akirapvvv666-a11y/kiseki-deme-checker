@@ -161,6 +161,7 @@ export const DB: DemeEntry[] = [
   { code:"774", type:"joke", label:"絶望目", desc:"<ジョークMODE>絶望目。これが出たらあのテンパイ音を聞いていないのにアイツがテンパイしてるはず。そう、全ては自己責任。", cond:null },
   { code:"674", type:"joke", label:"出前目", desc:"<ジョークMODE>出前目。なんか大体ハマってる時に見かける気がする。ちょっとだけ寂しくなる出前。", cond:null },
   { code:"874", type:"joke", label:"ハナシ目", desc:"<ジョークMODE>ハナシ目。人の話をちゃんと聞きなさい！って小さい頃言われてた気がする。いや、昨日も言われていた。", cond:null },
+  { code:"084", type:"joke", label:"お箸目", desc:"<ジョークMODE>お箸目。🥢", cond:null },
 
   // ===== Z-ZONEチャンス目 =====
   { code:"017", type:"gstop_w", label:"Z-ZONE弱チャンス目", desc:"Z-ZONE前兆示唆（弱）。0頭+7含み。頻出すれば期待。", cond:null },
