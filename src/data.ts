@@ -214,7 +214,7 @@ export function patterns(code: string): PatternMatch[] {
   const E = ["2", "4", "6", "8"];
   const oq = (x: string) => O.includes(x);
   const eq = (x: string) => E.includes(x);
-  const has = DB.some((d) => d.code === code);
+  const has = DB.some((d) => d.code === code && d.type !== "joke");
 
   if (a === "V" || b === "V" || c === "V")
     r.push({
