@@ -50,7 +50,7 @@ export const DB: DemeEntry[] = [
   { code:"555", type:"special", label:"GG濃厚", desc:"奇数揃い。GG当選濃厚。", cond:null },
   { code:"777", type:"special", label:"GG4セット以上濃厚", desc:"7揃い。基本はGOD揃い時に出現。",
     cond:[{w:"GOD揃い時",r:"GG4セット以上濃厚",i:"🔥"},{w:"G-ZONE中",r:"残りストック4個以上示唆",i:"✅"}] },
-  { code:"VVV", type:"special", label:"GG3セット以上濃厚", desc:"V揃い。GG3セット以上のストック濃厚。", cond:null },
+  { code:"VVV", type:"special", label:"GG3セット以上濃厚", desc:"V揃い。GG3セット以上のストック濃厚。別名・超革命目。", cond:null },
   { code:"SSS", type:"special", label:"SGG突入", desc:"S揃い。SGG（スーパーゴッドゲーム）突入。ゲーム数変動型AT（75%ループ以上）。", cond:null },
 
   // ===== リーチ目 =====
@@ -143,10 +143,11 @@ export const DB: DemeEntry[] = [
   { code:"334", type:"joke", label:"阪神目", desc:"<ジョークMODE>阪神目。呪われし番号。岡田彰布が唱えた「アレ」の正体は、もしかするとGOD揃いだったのかもしれない。", cond:null },
   { code:"404", type:"joke", label:"Not Found目", desc:"<ジョークMODE>Not Found目。あなたが探している当たりは見つかりませんでした。サーバーではなく、あなたの引きの問題です。", cond:null },
   { code:"420", type:"joke", label:"ウィード目", desc:"<ジョークMODE>ウィード目。※この出目を見て気分が高揚しても、それは合法です。ただしハマりは合法的に痛い。", cond:null },
-  { code:"666", type:"joke", label:"獣の数字目", desc:"<ジョークMODE>獣の数字目。ヨハネの黙示録より。悪魔に魂を売ってでもGODを引きたいあなたに。契約内容はよく読みましょう。", cond:null },
+  { code:"666", type:"joke", label:"獣の数字目", desc:"<ジョークMODE>獣の数字目。視界にシュッと通り過ぎた瞬間に感じるのは達成感とプレッシャー。革命RUSHよ永遠に。", cond:null },
   { code:"360", type:"joke", label:"全方位目", desc:"<ジョークMODE>全方位目。隣の台、後ろの通路、店員の視線、嫁からのLINE。全方位に気を配れ。ただし画面への集中は切らすな。", cond:null },
   { code:"454", type:"joke", label:"シコ目", desc:"<ジョークMODE>シコ目。072目の親戚。検索傾向から察するに、今日の稼働は長くなりそうですね。水分補給を忘れずに。", cond:null },
   { code:"117", type:"joke", label:"時報目", desc:"<ジョークMODE>時報目。ピッ、ピッ、ピッ、ポーン。現在の時刻をお知らせします。「もう一回だけ」と思ってから、すでに3時間経過しています。", cond:null },
+  { code:"081", type:"joke", label:"π目", desc:"<ジョークMODE>π目。出たらある意味ゴール。", cond:null },
 
   // ===== Z-ZONEチャンス目 =====
   { code:"017", type:"gstop_w", label:"Z-ZONE弱チャンス目", desc:"Z-ZONE前兆示唆（弱）。0頭+7含み。頻出すれば期待。", cond:null },
