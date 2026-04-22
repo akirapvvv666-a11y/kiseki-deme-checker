@@ -158,6 +158,7 @@ export const DB: DemeEntry[] = [
   { code:"S0S", type:"joke", label:"救難目", desc:"<ジョークMODE>救難目。目撃したら、どんな差枚圏からでも神の手が降りてきて救ってくれます。しかし恐らく目にすることはないでしょう…大丈夫。神は君のレバーに宿る。", cond:null },
   { code:"045", type:"joke", label:"タイミング目", desc:"<ジョークMODE>タイミング目。いつ行くかで世界線が変わる生理的革命分岐点。ちなみに黄7が4連した時点で行くのは自○行為だと個人的に思う。", cond:null },
   { code:"503", type:"joke", label:"ゴーマリィサン目", desc:"<ジョークMODE>ゴーマリィサン目。別名・エドウィン目。", cond:null },
+  { code:"774", type:"joke", label:"絶望目", desc:"<ジョークMODE>絶望目。これが出たらあのテンパイ音を聞いていないのにアイツがテンパイしてるはず。そう、全ては自己責任。", cond:null },
 
   // ===== Z-ZONEチャンス目 =====
   { code:"017", type:"gstop_w", label:"Z-ZONE弱チャンス目", desc:"Z-ZONE前兆示唆（弱）。0頭+7含み。頻出すれば期待。", cond:null },
