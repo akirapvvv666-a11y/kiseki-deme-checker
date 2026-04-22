@@ -155,6 +155,7 @@ export const DB: DemeEntry[] = [
   { code:"114", type:"joke", label:"いいよ目", desc:"<ジョークMODE>いいよ目。次に514が来た場合、当アプリは一切の責任を負いません。", cond:null },
   { code:"413", type:"joke", label:"シーサ。目", desc:"<ジョークMODE>シーサ。目。出たらおでこを光らせてください。すると異常なまでに強いヒキが発揮できるでしょう。", cond:null },
   { code:"427", type:"joke", label:"鹿児島ちゃん目", desc:"<ジョークMODE>鹿児島ちゃん目。界隈の住人・鹿児島ちゃんが2桁以上ぶっ込んで辞めるちょっと前に出た数字。大丈夫。生きてるだけで偉いんだ。", cond:null },
+  { code:"S0S", type:"joke", label:"救難目", desc:"<ジョークMODE>救難目。目撃したら、どんな差枚圏からでも神の手が降りてきて救ってくれます。しかし恐らく目にすることはないでしょう…大丈夫。神は君のレバーに宿る。", cond:null },
 
   // ===== Z-ZONEチャンス目 =====
   { code:"017", type:"gstop_w", label:"Z-ZONE弱チャンス目", desc:"Z-ZONE前兆示唆（弱）。0頭+7含み。頻出すれば期待。", cond:null },
