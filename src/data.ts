@@ -162,7 +162,7 @@ export const DB: DemeEntry[] = [
   { code:"674", type:"joke", label:"", desc:"<ジョークMODE>なんか大体ハマってる時に見かける気がする。ちょっとだけ寂しくなる出目。", cond:null },
   { code:"320", type:"joke", label:"人間だもの目", desc:"<ジョークMODE>", cond:null },
   { code:"0S1", type:"joke", label:"脱水目", desc:"<ジョークMODE>脱水目。熱くなりすぎて水分補給を忘れていませんか？台からの警告が出ていますよ！", cond:null },
-  { code:"310", type:"joke", label:"佐藤目／黄門目", desc:"<ジョークMODE>佐藤目（サトー目）。日本一多い苗字。隣の台の佐藤さんも、向かいの佐藤さんも、みんな負けている。あなただけではない。／黄門目。「この紋所が目に入らぬか！」とばかりにGODの紋所をXで見せつけたいところ。", cond:null },
+  { code:"310", type:"joke", label:"黄門目", desc:"<ジョークMODE>黄門目。「この紋所が目に入らぬか！」とばかりにGODの紋所をXで見せつけたいところ。", cond:null },
   { code:"108", type:"joke", label:"煩悩目", desc:"<ジョークMODE>煩悩目。人間の煩悩は108つ。のはずだが、パチスロ打ちの「あと1回だけ」はそれに含まれていません。つまり除夜の鐘では祓えません。", cond:null },
   { code:"226", type:"joke", label:"事件目", desc:"<ジョークMODE>事件目（二・二六目）。帝都を揺るがしたクーデター未遂。あなたの財布の中、クーデター起きていませんか？起きる前の冷静な対処も大事です。", cond:null },
   { code:"187", type:"joke", label:"嫌な目", desc:"<ジョークMODE>嫌な予感しかしない出目。直感を信じて撤退するか、意地で続行するか。どちらを選んでも後悔します。だったら進め！それが人生。", cond:null },
